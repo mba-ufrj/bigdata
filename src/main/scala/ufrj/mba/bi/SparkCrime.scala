@@ -18,7 +18,7 @@ object SparkCrime {
     val crimeRDO = spark.read.option("header", "true").csv("s3://study-bi/rdo/rdo.csv")
 
     // Definindo as variaveis que serão utilizadas para execução recorrente, o ano da consulta e o mes da consulta.
-    val yearSelect = LocalDate.now.getYear - 4
+    val yearSelect = LocalDate.now.getYear
     val monthSelect = LocalDate.now.getMonthValue - 1 // Analisando o mês anterior.
     val storagePath = yearSelect + "/" + monthSelect + "/"
 
